@@ -36,3 +36,24 @@ Route::get('participantes/{id}/delete', [
     'as' => 'participantes.delete',
     'uses' => 'participanteController@destroy',
 ]);
+
+Route::resource('palestras', 'palestraController');
+
+Route::get('participantes/{id}/delete', [
+    'as' => 'participantes.delete',
+    'uses' => 'participanteController@destroy',
+]);
+
+Route::resource('festas', 'festaController');
+
+Route::get('participantes/{id}/delete', [
+    'as' => 'participantes.delete',
+    'uses' => 'participanteController@destroy',
+]);
+
+Route::resource('workshops', 'workshopController');
+
+Route::get('participantes/{id}/delete', [
+    'as' => 'participantes.delete',
+    'uses' => 'participanteController@destroy',
+]);

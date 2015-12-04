@@ -5,10 +5,19 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+				<h1 align="center">Sistema de Gest&atilde;o de Eventos - DK Eventos Lda</h1>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p>
+				<p>
+				<p>
+				<p>
+				<p align="center"> Este Software &eacute; pertencente a DK Eventos Lda e visa ajudar na gest&atilde;o dos diversos eventos organizados por essa empresa</p>			
 
 				<div class="panel-body">
-					You are logged in!
+					
 				</div>
 			</div>
 		</div>

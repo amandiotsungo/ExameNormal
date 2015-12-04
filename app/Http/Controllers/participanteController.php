@@ -64,7 +64,7 @@ class participanteController extends AppBaseController
 
 		$participante = $this->participanteRepository->store($input);
 
-		Flash::message('participante saved successfully.');
+		Flash::message('Participante Registado com successo.');
 
 		return redirect(route('participantes.index'));
 	}
@@ -82,7 +82,7 @@ class participanteController extends AppBaseController
 
 		if(empty($participante))
 		{
-			Flash::error('participante not found');
+			Flash::error('Participante nao encontrado');
 			return redirect(route('participantes.index'));
 		}
 
@@ -101,7 +101,7 @@ class participanteController extends AppBaseController
 
 		if(empty($participante))
 		{
-			Flash::error('participante not found');
+			Flash::error('Participante nao encontrado');
 			return redirect(route('participantes.index'));
 		}
 
@@ -122,13 +122,13 @@ class participanteController extends AppBaseController
 
 		if(empty($participante))
 		{
-			Flash::error('participante not found');
+			Flash::error('Participante nao encontrado');
 			return redirect(route('participantes.index'));
 		}
 
 		$participante = $this->participanteRepository->update($participante, $request->all());
 
-		Flash::message('participante updated successfully.');
+		Flash::message('Participante actualizado com successo.');
 
 		return redirect(route('participantes.index'));
 	}
@@ -146,13 +146,13 @@ class participanteController extends AppBaseController
 
 		if(empty($participante))
 		{
-			Flash::error('participante not found');
+			Flash::error('Participante nao encontrado');
 			return redirect(route('participantes.index'));
 		}
 
 		$participante->delete();
 
-		Flash::message('participante deleted successfully.');
+		Flash::message('Participante apagado com successo.');
 
 		return redirect(route('participantes.index'));
 	}

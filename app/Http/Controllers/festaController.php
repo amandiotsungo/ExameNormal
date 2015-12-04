@@ -8,7 +8,7 @@ use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
 
-class eventoController extends AppBaseController
+class festaController extends AppBaseController
 {
 
 	/** @var  eventoRepository */
@@ -36,7 +36,7 @@ class eventoController extends AppBaseController
 
 		$attributes = $result[1];
 
-		return view('eventos.index')
+		return view('festa.index')
 		    ->with('eventos', $eventos)
 		    ->with('attributes', $attributes);;
 	}
@@ -48,7 +48,7 @@ class eventoController extends AppBaseController
 	 */
 	public function create()
 	{
-		return view('eventos.create');
+		return view('palestra.create');
 	}
 
 	/**
@@ -66,7 +66,7 @@ class eventoController extends AppBaseController
 
 		Flash::message('Evento Criado com successo.');
 
-		return redirect(route('eventos.index'));
+		return redirect(route('palestra.index'));
 	}
 
 	/**
@@ -80,13 +80,13 @@ class eventoController extends AppBaseController
 	{
 		$evento = $this->eventoRepository->findeventoById($id);
 
-		if(empty($evento))
+		if(empty($palestra))
 		{
 			Flash::error('Evento nao encontrado');
-			return redirect(route('eventos.index'));
+			return redirect(route('palestra.index'));
 		}
 
-		return view('eventos.show')->with('evento', $evento);
+		return view('palestra.show')->with('palestra', $palestra);
 	}
 
 	/**
@@ -102,10 +102,10 @@ class eventoController extends AppBaseController
 		if(empty($evento))
 		{
 			Flash::error('Evento nao encontrado');
-			return redirect(route('eventos.index'));
+			return redirect(route('palestra.index'));
 		}
 
-		return view('eventos.edit')->with('evento', $evento);
+		return view('palestra.edit')->with('palestra', $palestra);
 	}
 
 	/**
@@ -120,17 +120,17 @@ class eventoController extends AppBaseController
 	{
 		$evento = $this->eventoRepository->findeventoById($id);
 
-		if(empty($evento))
+		if(empty($palestra))
 		{
 			Flash::error('Evento nao encontrado');
-			return redirect(route('eventos.index'));
+			return redirect(route('palestra.index'));
 		}
 
-		$evento = $this->eventoRepository->update($evento, $request->all());
+		$evento = $this->eventoRepository->update($palestra, $request->all());
 
 		Flash::message('Evento actualizado com sucesso.');
 
-		return redirect(route('eventos.index'));
+		return redirect(route('palestra.index'));
 	}
 
 	/**
@@ -142,15 +142,15 @@ class eventoController extends AppBaseController
 	 */
 	public function destroy($id)
 	{
-		$evento = $this->eventoRepository->findeventoById($id);
+		$palestra = $this->eventoRepository->findeventoById($id);
 
-		if(empty($evento))
+		if(empty($palestra))
 		{
 			Flash::error('Evento nao encontrado.');
-			return redirect(route('eventos.index'));
+			return redirect(route('palestra.index'));
 		}
 
-		$evento->delete();
+		$palestra->delete();
 
 		Flash::message('Evento apagado com successo.');
 
